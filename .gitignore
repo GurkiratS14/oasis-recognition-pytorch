@@ -5,4 +5,5 @@ __pycache__/
 *.ckpt
 .ipynb_checkpoints/
 data/
-outputs/
+outputs/*
+!outputs/**/*.png
