@@ -37,12 +37,30 @@ def parse_args() -> argparse.Namespace:
         help="Path to the OASIS dataset root (contains keras_png_slices_{train,validate,test})",
     )
     parser.add_argument("--epochs", type=int, default=20, help="Number of training epochs.")
-    parser.add_argument("--beta", type=float, default=1.0, help="Weight on the KL divergence term.")
+    parser.add_argument(
+        "--beta-max", type=float, default=1.0,
+        help="Final (max) weight on the KL divergence term, reached at --anneal-epochs.",
+    )
+    parser.add_argument(
+        "--anneal-epochs", type=int, default=10,
+        help="Number of epochs over which beta is linearly annealed from 0 to beta-max.",
+    )
     parser.add_argument(
         "--checkpoint-path", type=str, default="checkpoints/vae.pth",
         help="Path to save the trained model's state_dict.",
     )
     return parser.parse_args()
+
+
+def kl_weight_schedule(epoch: int, beta_max: float, anneal_epochs: int) -> float:
+    """Linearly ramp beta from 0.0 at epoch 1 to beta_max at epoch anneal_epochs.
+
+    Holds steady at beta_max for all epochs after anneal_epochs.
+    """
+    if anneal_epochs <= 1:
+        return beta_max
+    progress = min(1.0, (epoch - 1) / (anneal_epochs - 1))
+    return beta_max * progress
 
 
 def run_epoch(
@@ -90,9 +108,10 @@ def main() -> None:
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
 
     for epoch in range(1, args.epochs + 1):
-        train_loss = run_epoch(model, train_loader, optimizer, args.beta, device, train=True)
-        val_loss = run_epoch(model, val_loader, optimizer, args.beta, device, train=False)
-        print(f"epoch={epoch},train_loss={train_loss:.4f},val_loss={val_loss:.4f}")
+        beta = kl_weight_schedule(epoch, args.beta_max, args.anneal_epochs)
+        train_loss = run_epoch(model, train_loader, optimizer, beta, device, train=True)
+        val_loss = run_epoch(model, val_loader, optimizer, beta, device, train=False)
+        print(f"epoch={epoch},beta={beta:.4f},train_loss={train_loss:.4f},val_loss={val_loss:.4f}")
 
     checkpoint_path = Path(args.checkpoint_path)
     checkpoint_path.parent.mkdir(parents=True, exist_ok=True)

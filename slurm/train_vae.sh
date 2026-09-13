@@ -14,5 +14,7 @@ source .venv/bin/activate
 
 python3 -m src.train_vae \
     --oasis-root /home/groups/comp3710/OASIS \
-    --epochs 20 \
+    --epochs 35 \
+    --anneal-epochs 10 \
+    --beta-max 1.0 \
     --checkpoint-path checkpoints/vae.pth
