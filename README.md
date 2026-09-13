@@ -60,7 +60,26 @@ brain MRI dataset:
 - Run: `python3 -m src.train_unet --oasis-root <path> --epochs 30 --batch-size 16`
 - Visualize / live inference: `python3 -m src.visualize_unet --checkpoint-path <ckpt> --oasis-root <path>`
 
-## Task 3 — GAN (in progress)
+## Task 3 — GAN (`src/gan.py`, `src/train_gan.py`, `src/plot_gan_losses.py`)
+
+- DCGAN-style Generator (100-dim noise → 256x256x1 via transpose-conv stack)
+  and Discriminator (256x256x1 → single real/fake logit via conv stack),
+  with standard DCGAN weight initialization (N(0, 0.02)).
+- Trained with the non-saturating generator loss and BCEWithLogitsLoss,
+  separate Adam optimizers (lr=2e-4, betas=(0.5, 0.999)) for G and D.
+- **Training dynamics**: the discriminator loss stayed low throughout
+  (dipping toward near-zero around epochs 9-14) while generator loss
+  remained elevated and noisy — a discriminator-dominant pattern that could
+  suggest the generator is starved of gradient signal. See
+  `outputs/gan/loss_curves.png` and `training_logs_gan_50epoch.txt`.
+- **However**, the actual generated samples tell a more positive story than
+  the loss curve alone suggests: progression from noise (epoch 5) to
+  recognisable, anatomically varied brain slices with distinct ventricle
+  shapes and cortical texture (epoch 25-50), with genuine diversity across
+  the sample grid — no evidence of mode collapse. See
+  `outputs/gan/samples_epoch{5,25,50}.png`.
+- Run: `python3 -m src.train_gan --oasis-root <path> --epochs 50 --batch-size 32`
+- Plot losses: `python3 -m src.plot_gan_losses <log_file> --output-path <out.png>`
 
 ## Repo structure
 
