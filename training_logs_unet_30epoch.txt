@@ -1,0 +1,32 @@
+Using device: cuda
+epoch=1,train_loss=0.0896,val_loss=0.0550,dsc_bg=0.9979,dsc_csf=0.9138,dsc_gm=0.9326,dsc_wm=0.9526
+epoch=2,train_loss=0.0390,val_loss=0.0343,dsc_bg=0.9988,dsc_csf=0.9398,dsc_gm=0.9575,dsc_wm=0.9741
+epoch=3,train_loss=0.0337,val_loss=0.0387,dsc_bg=0.9990,dsc_csf=0.9259,dsc_gm=0.9510,dsc_wm=0.9731
+epoch=4,train_loss=0.0307,val_loss=0.0421,dsc_bg=0.9991,dsc_csf=0.9446,dsc_gm=0.9455,dsc_wm=0.9575
+epoch=5,train_loss=0.0285,val_loss=0.0310,dsc_bg=0.9992,dsc_csf=0.9471,dsc_gm=0.9595,dsc_wm=0.9760
+epoch=6,train_loss=0.0270,val_loss=0.0402,dsc_bg=0.9993,dsc_csf=0.9236,dsc_gm=0.9459,dsc_wm=0.9745
+epoch=7,train_loss=0.0254,val_loss=0.0602,dsc_bg=0.9993,dsc_csf=0.8773,dsc_gm=0.9350,dsc_wm=0.9734
+epoch=8,train_loss=0.0240,val_loss=0.0465,dsc_bg=0.9993,dsc_csf=0.9430,dsc_gm=0.9403,dsc_wm=0.9543
+epoch=9,train_loss=0.0227,val_loss=0.0297,dsc_bg=0.9993,dsc_csf=0.9451,dsc_gm=0.9628,dsc_wm=0.9790
+epoch=10,train_loss=0.0217,val_loss=0.0281,dsc_bg=0.9994,dsc_csf=0.9525,dsc_gm=0.9630,dsc_wm=0.9787
+epoch=11,train_loss=0.0207,val_loss=0.0290,dsc_bg=0.9994,dsc_csf=0.9508,dsc_gm=0.9633,dsc_wm=0.9775
+epoch=12,train_loss=0.0199,val_loss=0.0359,dsc_bg=0.9994,dsc_csf=0.9487,dsc_gm=0.9559,dsc_wm=0.9685
+epoch=13,train_loss=0.0190,val_loss=0.0303,dsc_bg=0.9994,dsc_csf=0.9529,dsc_gm=0.9611,dsc_wm=0.9750
+epoch=14,train_loss=0.0184,val_loss=0.0272,dsc_bg=0.9994,dsc_csf=0.9549,dsc_gm=0.9654,dsc_wm=0.9797
+epoch=15,train_loss=0.0178,val_loss=0.0301,dsc_bg=0.9994,dsc_csf=0.9552,dsc_gm=0.9624,dsc_wm=0.9766
+epoch=16,train_loss=0.0176,val_loss=0.0285,dsc_bg=0.9994,dsc_csf=0.9544,dsc_gm=0.9639,dsc_wm=0.9787
+epoch=17,train_loss=0.0170,val_loss=0.0407,dsc_bg=0.9994,dsc_csf=0.9512,dsc_gm=0.9491,dsc_wm=0.9654
+epoch=18,train_loss=0.0165,val_loss=0.0460,dsc_bg=0.9994,dsc_csf=0.9299,dsc_gm=0.9425,dsc_wm=0.9702
+epoch=19,train_loss=0.0161,val_loss=0.0295,dsc_bg=0.9995,dsc_csf=0.9542,dsc_gm=0.9639,dsc_wm=0.9790
+epoch=20,train_loss=0.0161,val_loss=0.0281,dsc_bg=0.9994,dsc_csf=0.9556,dsc_gm=0.9662,dsc_wm=0.9797
+epoch=21,train_loss=0.0154,val_loss=0.0303,dsc_bg=0.9995,dsc_csf=0.9506,dsc_gm=0.9646,dsc_wm=0.9793
+epoch=22,train_loss=0.0150,val_loss=0.0373,dsc_bg=0.9995,dsc_csf=0.9541,dsc_gm=0.9574,dsc_wm=0.9689
+epoch=23,train_loss=0.0147,val_loss=0.0286,dsc_bg=0.9995,dsc_csf=0.9555,dsc_gm=0.9661,dsc_wm=0.9795
+epoch=24,train_loss=0.0141,val_loss=0.0292,dsc_bg=0.9995,dsc_csf=0.9552,dsc_gm=0.9653,dsc_wm=0.9792
+epoch=25,train_loss=0.0138,val_loss=0.0302,dsc_bg=0.9995,dsc_csf=0.9556,dsc_gm=0.9654,dsc_wm=0.9783
+epoch=26,train_loss=0.0137,val_loss=0.0366,dsc_bg=0.9995,dsc_csf=0.9429,dsc_gm=0.9595,dsc_wm=0.9770
+epoch=27,train_loss=0.0136,val_loss=0.0319,dsc_bg=0.9995,dsc_csf=0.9480,dsc_gm=0.9641,dsc_wm=0.9796
+epoch=28,train_loss=0.0131,val_loss=0.0323,dsc_bg=0.9995,dsc_csf=0.9516,dsc_gm=0.9634,dsc_wm=0.9781
+epoch=29,train_loss=0.0129,val_loss=0.0316,dsc_bg=0.9995,dsc_csf=0.9509,dsc_gm=0.9648,dsc_wm=0.9797
+epoch=30,train_loss=0.0126,val_loss=0.0334,dsc_bg=0.9995,dsc_csf=0.9532,dsc_gm=0.9633,dsc_wm=0.9766
+Saved checkpoint to checkpoints/unet.pth
