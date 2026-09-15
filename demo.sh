@@ -8,12 +8,12 @@ TASK=${1:-all}
 
 run_vae() {
     echo "=== VAE: reconstructions + manifold ==="
-    python3 -m src.visualize_vae --checkpoint-path checkpoints/vae.pth --oasis-root sample_data
+    python3 -m src.visualize_vae --checkpoint-path checkpoints/vae.pth --oasis-root full_oasis_data
 }
 
 run_unet() {
     echo "=== UNet: segmentation + DSC ==="
-    python3 -m src.visualize_unet --checkpoint-path checkpoints/unet.pth --oasis-root sample_data
+    python3 -m src.visualize_unet --checkpoint-path checkpoints/unet.pth --oasis-root full_oasis_data
 }
 
 run_gan() {
